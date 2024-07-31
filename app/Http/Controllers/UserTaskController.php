@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\UserTask;
 use Illuminate\Http\Request;
 
 class UserTaskController extends Controller
@@ -34,6 +34,12 @@ class UserTaskController extends Controller
             'deadline'    => 'required|date', 
 
         ]);
+        $usertask = new UserTask();
+        $usertask->task_name    =$request['task_name'];
+        $usertask->status       =$request['status'];
+        $usertask->description  =$request['description'];
+        $usertask->deadline     =$request['deadline'];
+        $usertask->save();
 
         return back()->with('success', 'Data saved successfully!.');
     }
