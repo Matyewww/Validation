@@ -11,7 +11,7 @@ class UserTaskController extends Controller
      */
     public function index()
     {
-        //
+        return UserTask::all();
     }
 
     /**
@@ -49,7 +49,7 @@ class UserTaskController extends Controller
      */
     public function show(string $id)
     {
-        //
+        
     }
 
     /**
